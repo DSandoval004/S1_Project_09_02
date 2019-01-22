@@ -13,14 +13,17 @@
 
 
 /* Validation Styles */
+/* This changes the background color when the input, select or textarea is in use. */
 input:focus:not([type='radio']) {
     background: rgb(255, 218, 165);
 }
 
+/* This shows if the information is vaild. */
 input:focus:valid:not([type='radio']) {
     background: rgb(215, 218, 165) url(sb_valid.png) bottom right/contain no-repeat;
 }
 
+/* This shows if the information is invaild. */
 input:focus:invalid:not([type='radio']) {
     background: rgb(255, 245, 215) url(sb_invalid.png) bottom right/contain no-repeat;
 }

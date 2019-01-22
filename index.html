@@ -31,7 +31,7 @@
         <img src="sb_logo.png" alt="The Spice Bowl" />
 
         <!-- * Username and Password Login Form -->
-
+        <!-- A web form with two inputs in it, one input is for the user username, the other is for the user password. It sends the information via the post method to the server http://www.example.com/sb/login -->
         <form action="http://www.example.com/sb/login" method="post" id="login">
             <input type="text" name="username" id="userBox" placeholder="username">
             <input type="text" name="password" id="pwdBox" placeholder="password">
@@ -54,39 +54,45 @@
         <h1>Payment Form</h1>
 
         <!-- * Payment Form -->
-
+        <!-- This web form is for customers to pay for their order, it sends it's information via the post method to http://www.example.com/sb/payment -->
         <form action="http://www.example.com/sb/login" method="post" id="payment">
+            <!-- Splits up the parts of the web form to make it easier to understand, also their a legen to show what section of the form it is. -->
             <fieldset>
-
                 <legend>Billing Information (required)</legend>
 
                 <!-- Book said theat we don't need to encolse the labels and inputs in a div, but I did it anyways. -->
                 <div>
+                    <!-- Input box for user to enter their first name, this box is marked required so user have to put information in it. -->
                     <label for="fName">First Name</label>
                     <input type="text" name="fName" id="firstBox" required>
                 </div>
 
                 <div>
+                    <!-- Input box for user to enter their last name, this box is marked required so user have to put information in it. -->
                     <label for="lName">Last Name</label>
                     <input type="text" name="lName" id="lastBox" required>
                 </div>
 
                 <div>
+                    <!-- Input box for user to enter their street address, this box is marked required so user have to put information in it. -->
                     <label for="street">Street Address</label>
                     <input type="text" name="street" id="streetBox" required>
                 </div>
 
                 <div>
+                    <!-- For user with a second street address that they would like to include. -->
                     <label for="street2">Street Address (2)</label>
                     <input type="text" name="street2" id="streetBox2">
                 </div>
 
                 <div>
+                    <!-- Input box for users city to be entered, this box is marked required so user have to put information in it. -->
                     <label for="city">City</label>
                     <input type="text" name="city" id="cityBox" required>
                 </div>
 
                 <div>
+                    <!-- Input box with a list of possible states for user to enter in, this box is marked required so user have to put information in it. -->
                     <label for="state">State</label>
                     <input type="text" name="state" id="stateBox" list="stateList" required>
                     <datalist id="stateList">
@@ -144,49 +150,55 @@
                 </div>
 
                 <div>
+                    <!-- Input box for user to enter their ZIP code number into, it has a pattern to make sure the user enters it in the correct format, this box is marked required so user have to put information in it. -->
                     <label for="zip">ZIP/Postal Code</label>
                     <input type="text" name="zip" id="zipBox" pattern="^\d{5}(-\d{4})?$">
                 </div>
 
                 <div>
+                    <!-- Input box for user to enter their country into. -->
                     <label for="country">Country</label>
                     <input type="text" name="country" id="countryBox" value="United States">
                 </div>
 
                 <div>
+                    <!-- Input box for user to put their phone number in, it also has a patter so it checks to make sure the user phone number is in the correct form, this box is marked required so user have to put information in it. -->
                     <label for="phone">Phone</label>
                     <input type="tel" name="phone" id="phoneBox" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                         required>
                 </div>
 
             </fieldset>
-
+            <!-- Fieldset for credit card info, their a legend to display what section it is. -->
             <fieldset id="creditCard">
                 <legend>Credit Card (required)</legend>
+                <!-- Fieldset for user to select what card type they use, and an image to go along with the card, this is marked required so user have to select something. -->
                 <fieldset>
-                    <label for="" class="cardLabel">
+                    <label for="cCard" class="cardLabel">
                         <input type="radio" name="cCard" id="cCard" value="amex" required>
                         <img src="sb_amex.png" alt="amex">
                     </label>
-                    <label for="" class="cardLabel">
+                    <label for="cCard" class="cardLabel">
                         <input type="radio" name="cCard" id="cCard" value="discover" required>
                         <img src="sb_discover.png" alt="discover">
                     </label>
-                    <label for="" class="cardLabel">
+                    <label for="cCard" class="cardLabel">
                         <input type="radio" name="cCard" id="cCard" value="master" required>
                         <img src="sb_master.png" alt="master">
                     </label>
-                    <label for="" class="cardLabel">
+                    <label for="cCard" class="cardLabel">
                         <input type="radio" name="cCard" id="cCard" value="visa" required>
                         <img src="sb_visa.png" alt="visa">
                     </label>
                 </fieldset>
                 <div>
+                    <!-- Input for user card number, their is a pattern to make sure user enter the information in the correct way, this box is marked required so user have to put  information in it. -->
                     <label for="cardNumber">Credit Card Number</label>
                     <input type="text" name="cardNumber" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
                         required>
                 </div>
                 <div>
+                    <!-- A select list for user to select what month their card expires, this box is marked required so user have to put information in it. -->
                     <label for="cardMonth">Expiration Date</label>
                     <select name="cardMonth" id="monthList" required>
                         <option value="">--Month--</option>
@@ -203,6 +215,7 @@
                         <option value="11">November</option>
                         <option value="12">December</option>
                     </select>
+                    <!-- A select list for user to select what year their card expiresthis box is marked required so user have to put information in it. -->
                     <select name="cardYear" id="yearList" required>
                         <option value="">--Year--</option>
                         <option value="2017">2017</option>
@@ -213,10 +226,12 @@
                     </select>
                 </div>
                 <div>
-                    <label for="">CSC</label>
+                    <!-- Input box for user to put their CSC into, their a pattern to make sure the user enters the correct format, this box is marked required so user have to put information in it. -->
+                    <label for="cscBox">CSC</label>
                     <input type="text" name="csc" id="cscBox" pattern="^\d{3}$" placeholder="nnn" required>
                 </div>
             </fieldset>
+            <!-- The submit button iis put onto an image to match the flow of the website. -->
             <button type="submit"><img src="sb_button.png" alt="next"></button>
         </form>
 
